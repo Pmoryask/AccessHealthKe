@@ -3,22 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AccessHealthKe - Contact</title>
+  <title>AccessHealthKe - Patient Contact Information</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file for styling -->
 </head>
 <body>
   <header>
-    <h1>Contact Us</h1>
+    <h1>Patient Contact Information</h1>
+    <!-- Add navigation links here if needed -->
   </header>
   <main>
     <section>
-      <h2>Contact Information</h2>
-      <p>Email: example@email.com</p>
-      <p>Phone: 123-456-7890</p>
-      <p>Address: 123 Street, City, Country</p>
+      <h2>Personal Details</h2>
+      <form id="contactForm">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4"></textarea>
+
+        <label for="emergencyContact">Emergency Contact:</label>
+        <input type="text" id="emergencyContact" name="emergencyContact">
+
+        <button type="submit">Save</button>
+      </form>
     </section>
   </main>
   <footer>
-    <!-- Add footer content -->
+    <p>Contact us: example@email.com</p>
   </footer>
+
+  <script src="script.js"></script> <!-- Link to your JavaScript file for form handling -->
 </body>
 </html>
