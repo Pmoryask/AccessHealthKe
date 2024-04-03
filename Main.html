@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AccessHealthKe - Sample Forms and UI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    input[type="text"], textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .report-container {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+    .dialog-container {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    .dialog-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+    .dialog-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AccessHealthKe - Sample Forms and UI</h1>
+
+    <h2>Appointment Form</h2>
+    <form id="appointmentForm">
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" name="fullName" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="appointmentDate">Appointment Date:</label>
+      <input type="date" id="appointmentDate" name="appointmentDate" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div class="dialog-overlay" id="dialogOverlay"></div>
+    <div class="dialog-container" id="dialogContainer">
+      <span class="dialog-close" id="dialogClose">&times;</span>
+      <h2>Appointment Confirmation</h2>
+      <p>Your appointment has been scheduled successfully!</p>
+    </div>
+
+    <script>
+      const appointmentForm = document.getElementById('appointmentForm');
+      const dialogOverlay = document.getElementById('dialogOverlay');
+      const dialogContainer = document.getElementById('dialogContainer');
+      const dialogClose = document.getElementById('dialogClose');
+
+      appointmentForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Logic to submit form data and show dialog
+        dialogOverlay.style.display = 'block';
+        dialogContainer.style.display = 'block';
+      });
+
+      dialogClose.addEventListener('click', function() {
+        dialogOverlay.style.display = 'none';
+        dialogContainer.style.display = 'none';
+      });
+    </script>
+  </div>
+</body>
+</html>
